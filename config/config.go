@@ -8,7 +8,7 @@ import (
 
 var config *viper.Viper
 
-// Init - exported method that starts the viper and returns the configuration struct.
+// Init - starts the viper and returns the configuration struct.
 func Init(path string) {
 	var err error
 	v := viper.New()

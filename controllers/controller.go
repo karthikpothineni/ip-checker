@@ -11,7 +11,7 @@ import (
 	"ip-checker/utils"
 )
 
-// GetStatus provides rest endpoint to check the status of the rest server
+// GetStatus - Controller function to check the status of the rest server
 func GetStatus(c echo.Context) error {
 	response := utils.BuildResponse("success", "", "Server is UP and Running")
 	return c.JSON(http.StatusOK, response)

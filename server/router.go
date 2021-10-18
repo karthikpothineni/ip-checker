@@ -7,9 +7,8 @@ import (
 	"ip-checker/controllers"
 )
 
-// NewRouter for routing requests
+// NewRouter - creates echo instance for routing requests
 func NewRouter() *echo.Echo {
-
 	router := echo.New()
 	router.Use(middleware.Logger())
 	router.Use(middleware.Recover())
@@ -17,11 +16,11 @@ func NewRouter() *echo.Echo {
 		AllowMethods: []string{echo.OPTIONS, echo.POST},
 	}))
 
-	// Endpoints for healthcheck
+	// endpoint for health check
 	router.GET("/status", controllers.GetStatus)
 
+	// endpoint for ip validation
 	ipService := router.Group("/")
-	// this group is for read APIS
 	var version1 *echo.Group
 	version1 = ipService.Group("v1")
 	version1.POST("/validate-ip/", controllers.ValidateIP)

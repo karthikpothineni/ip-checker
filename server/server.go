@@ -5,7 +5,7 @@ import (
 	"ip-checker/logger"
 )
 
-// Init function to initialize the service
+// Init - function to initialize the server
 func Init() {
 	conf := config.GetConfig()
 	logger.Log.Info("Initializing Rest server")
