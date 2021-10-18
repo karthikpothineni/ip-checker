@@ -1,0 +1,5 @@
+[general]
+server_port = "0.0.0.0:5000"
+
+[geoip]
+filepath = "GeoLite2-Country/GeoLite2-Country.mmdb"
