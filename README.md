@@ -71,6 +71,7 @@ I have added the tests for **adapters**,**services**,**utils**. Code coverage is
 ```
 
 ## Plan for keeping the mapping data up to date
-1) Create a Rule using Amazon EventBridge which internally triggers a Lambda function periodically.
-2) Lamba function internally calls the Update Mapping Data API in our service. 
-3) This API internally downloads the latest mapping data and re-initializes the GeoIP Reader Object.
+1) Create a CRON in this service along with the HTTP server.
+2) This CRON internally downloads the latest mapping data from maxmind and re-initializes the GeoIP Reader Object periodically.
+3) We need to keep a Mutex Lock when updating the GeoIP reader object, so that no new IP lookups will be done during updation.
+4) Add exponential backoff retries when downloading the mapping data from maxmind.
