@@ -73,4 +73,4 @@ I have added the tests for **adapters**,**services**,**utils**. Code coverage is
 ## Plan for keeping the mapping data up to date
 1) Create a Rule using Amazon EventBridge which internally triggers a Lambda function periodically.
 2) Lamba function internally calls the Update Mapping Data API in our service. 
-3) This API internally downloads the latest mapping data and re-initialize the GeoIP Reader Object.
+3) This API internally downloads the latest mapping data and re-initializes the GeoIP Reader Object.
